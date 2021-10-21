@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<style>
+<style lang="css">
  @import '~normalize.css';
 
 #app {
@@ -41,9 +41,17 @@
 }
 
 #nav a {
+  font-size: 1.25rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.25rem;
   font-weight: bold;
   text-decoration: none;
   color: #FFFFFF;
+  transition: all 0.5s ease-in-out;
+}
+
+#nav a:hover {
+  background: #ffffff7e;
 }
 
 #nav a.router-link-exact-active {
