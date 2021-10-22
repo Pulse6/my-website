@@ -25,7 +25,8 @@ export default {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: max(2.5rem, 4vmin);
+  /* font-size: 5vmin; */
   background-color: #FFE53B;
   background: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
   background-clip: text;
@@ -33,7 +34,9 @@ h1 {
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: max(1.5rem, 2vmin);
+  /* font-size: 4.5vw; */
+  /* font-size: clamp(1rem, 20vw, 1.5rem); */
 }
 
 img {
