@@ -17,7 +17,7 @@ html {
   color: #FFFFFF;
   min-height: 100vh;
   min-width: 100vw;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
