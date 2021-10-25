@@ -2,6 +2,12 @@
   <div class="home">
     <div class="about">
       <img src="@/assets/me.jpeg" alt="">
+      <div class="media-link">
+        <a href="https://www.linkedin.com/in/marco-siu-790802162/" target="_blank" rel="noopener" aria-label="linkedIn"><img src="../assets/linkedin.png" alt="linkedin logo"></a>
+        <a href="https://github.com/Pulse6" target="_blank" rel="noopener" aria-label="Github"><img src="../assets/GitHub-Mark-Light-120px-plus.png" alt="github logo"></a>
+        <a href="https://twitter.com/SiuHok" target="_blank" rel="noopener" aria-label="Twitter"><img src="../assets/twitter.png" alt="twitter logo"></a>
+        <a href="https://www.canva.com/design/DAD5ca8VaMA/ebM48TwW5I4CTXurvfjnSg/view?utm_content=DAD5ca8VaMA&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton" target="_blank" rel="noopener" aria-label="Resume"><img src="../assets/cv.png" alt="resume icon"></a>
+      </div>
       <h1>Nice to meet you <span role="img" aria-label="sheep">🐑</span></h1>
       <p>My name is Hok Lun Siu, You may call me Marco. I am passionate about web development. I enjoy learning and sharing my own knowledge with my colleagues to hone our coding abilities, and problem solving. I am always looking forward to the new challenges of the ever changing technological world we live in. I am excited to be given the opportunity to be apart of a coding team.</p>
     </div>
@@ -49,7 +55,23 @@ p {
 
 img {
   max-width: 250px;
-  border-radius: 5%;
+  border-radius: 10px;
+}
+
+.media-link {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+  margin: 1rem;
+  padding: 0.5rem;
+  max-width: 250px;
+  width: 100%;
+  /* border-radius: 10px; */
+}
+
+.media-link a img{
+  max-width: 40px;
 }
 
 </style>
