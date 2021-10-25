@@ -4,7 +4,6 @@
       <img src="@/assets/me.jpeg" alt="">
       <h1>Nice to meet you <span role="img" aria-label="sheep">🐑</span></h1>
       <p>My name is Hok Lun Siu, You may call me Marco. I am passionate about web development. I enjoy learning and sharing my own knowledge with my colleagues to hone our coding abilities, and problem solving. I am always looking forward to the new challenges of the ever changing technological world we live in. I am excited to be given the opportunity to be apart of a coding team.</p>
-      <div class="time-left">{{timeLeft}}</div>
     </div>
   </div>
 </template>
@@ -15,29 +14,11 @@ export default {
   name: 'Home',
   data () {
     return {
-      timeLeft: null,
     }
-  },
-  beforeMount () {
-    setInterval(() => {
-      this.timeLeft = this.GetSec()
-    }, 1000)
   },
   methods: {
     GetSec() {
-      let now = new Date();
-      let hour = now.getHours();
-      let minutes = now.getMinutes();
-      let seconds = now.getSeconds();
-      let totalSecondsToday = (hour * 60 + minutes) * 60 + seconds;
-
-      let date0 = new Date(now.toString().slice(11, 15), 0, 1);
-      let date1 = new Date();
-      let numberOfDays = Math.ceil((date1 - date0) / 8.64e7);
-
-      let temp = ((numberOfDays - 1) * 86400) + totalSecondsToday
-      let secondLeft = 31622400 - temp
-      return secondLeft
+     
     }
   }
 }
@@ -54,7 +35,6 @@ export default {
 
 h1 {
   font-size: max(2.5rem, 4vmin);
-  /* font-size: 5vmin; */
   background-color: #FFE53B;
   background: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
   background-clip: text;
@@ -62,7 +42,7 @@ h1 {
 }
 
 p {
-  font-size: max(1.5rem, 2vmin);
+  font-size: max(1.1rem, 2vmin);
   /* font-size: 4.5vw; */
   /* font-size: clamp(1rem, 20vw, 1.5rem); */
 }
@@ -72,7 +52,4 @@ img {
   border-radius: 5%;
 }
 
-.time-left {
-  font-size: max(2.5rem, 4vmin);
-}
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">Contact</router-link>
+      <router-link to="/">Me</router-link>
+      <!-- <router-link to="/about">Contact</router-link> -->
       <router-link to="/random">Random</router-link>
     </div>
     <router-view/>
@@ -30,11 +30,12 @@ html {
 
 #nav {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
   column-gap: 2rem;
   padding: 1rem 0;
+  margin-bottom: 2em;
 }
 
 #nav a {
