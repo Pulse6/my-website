@@ -1,23 +1,31 @@
 <template>
   <div class="random">
-    <!-- <h1>This is an random page</h1> -->
-    <div class="time-left">{{timeLeft}}</div>
+    <div class="poke-time">
+      <div class="time-left">{{timeLeft}}</div>
+      <div class="poke-info" v-if="pokeData != null">
+        <img :src="pokeData.sprites.other['official-artwork'].front_default" alt="picutre of pokemon">
+        <div>{{pokeData.name}}</div>
+      </div>
+      <button @click="getPoke">Get Random Pokemon</button>
+    </div>
   </div>
 </template>
 
 <script>
-
+import axios from 'axios';
 export default {
   name: 'Random',
   data () {
     return {
       timeLeft: null,
+      pokeData: null,
     }
   },
   beforeMount () {
     setInterval(() => {
       this.timeLeft = this.GetSec()
-    }, 1000)
+    }, 1000),
+    this.getPoke()
   },
   methods: {
     GetSec() {
@@ -34,6 +42,12 @@ export default {
       let temp = ((numberOfDays - 1) * 86400) + totalSecondsToday
       let secondLeft = 31622400 - temp
       return secondLeft
+    },
+    getPoke() {
+      axios.get('https://pokeapi.co/api/v2/pokemon/' + String(Math.floor(Math.random() * 898)))
+      .then(response => {
+        this.pokeData = response.data
+      })
     }
   }
 }
@@ -43,4 +57,37 @@ export default {
 .time-left {
   font-size: max(2.5rem, 4vmin);
 }
+
+.poke-time {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.poke-time img {
+  max-width: 250px;
+}
+
+.poke-info {
+  margin: 2rem 0;
+}
+
+.poke-info div{
+  font-size: max(2rem, 4vmin);
+}
+
+.poke-time button{
+  color: aliceblue;
+  background: transparent;
+  padding: 1rem;
+  border: 2px solid aliceblue;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.poke-time button:hover{
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
 </style>

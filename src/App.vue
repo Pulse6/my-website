@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav" ref="navBar">
       <router-link to="/">Me</router-link>
       <!-- <router-link to="/about">Contact</router-link> -->
       <router-link to="/random">Random</router-link>
@@ -26,6 +26,7 @@ html {
 #app{
   max-width: 1014px;
   margin: 0 auto;
+  min-height: 100vh;
 }
 
 #nav {
