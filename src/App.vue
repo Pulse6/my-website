@@ -49,11 +49,14 @@ html {
   transition: all 0.5s ease-in-out;
 }
 
-#nav a:hover {
-  background: #ffffff7e;
-}
-
 #nav a.router-link-exact-active {
   color: #ff7f82;
+}
+
+/* apply :hover only on pointer */
+@media (hover: hover) and (pointer: fine) {
+  #nav a:hover {
+    background: #ffffff7e;
+  }
 }
 </style>
