@@ -1,13 +1,13 @@
 <template>
   <div class="random">
-    <div class="poke-time">
+    <article class="card gradient-shadow poke-time">
       <div class="time-left">{{timeLeft}}</div>
       <div class="poke-info" v-if="pokeData != null">
         <img :src="pokeData.sprites.other['official-artwork'].front_default" alt="picutre of pokemon">
         <div>{{pokeData.name}}</div>
       </div>
       <button @click="getPoke">Get Random Pokemon</button>
-    </div>
+  </article>
   </div>
 </template>
 
@@ -54,6 +54,54 @@ export default {
 </script>
 
 <style scoped>
+
+.random {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+/* card gradient got it form  Kevin Powell */
+.card {
+  display: flex;
+  flex-direction: column;
+  /* margin: 2rem; */
+  padding: 2rem;
+  max-width: 35ch;
+  border-radius: 0.25em;
+  color: white;
+  box-shadow: 0 0 3rem hsl(0 0 0 / 0.2);
+}
+
+.gradient-shadow {
+  background: linear-gradient(
+    45deg,
+    hsl(7 100% 63%),
+    hsl(239 100% 50%)
+  );
+  box-shadow: 0;
+  position: relative;
+  isolation: isolate;
+}
+
+.gradient-shadow::before,
+.gradient-shadow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: inherit;
+}
+
+.gradient-shadow::before {
+  filter: blur(0.75em);
+}
+
+.gradient-shadow::after {
+  opacity: 0.5;
+  filter: blur(2em);
+}
+
 .time-left {
   font-size: max(2.5rem, 4vmin);
 }
@@ -62,6 +110,7 @@ export default {
   display: grid;
   justify-items: center;
   align-items: center;
+  text-shadow: 0px 0px 20px black;
 }
 
 .poke-time img {
