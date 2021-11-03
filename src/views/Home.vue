@@ -4,7 +4,7 @@
       <img src="@/assets/me.jpeg" alt="">
       <div class="media-link">
         <a href="https://www.linkedin.com/in/marco-siu-790802162/" target="_blank" rel="noopener noreferrer" aria-label="linkedIn"><img src="../assets/linkedin.png" alt="linkedin logo"></a>
-        <a href="https://github.com/Pulse6" target="_blank" rel="noopener noreferrer" aria-label="Github"><img src="../assets/GitHub-Mark-Light-120px-plus.png" alt="github logo"></a>
+        <a href="https://github.com/Pulse6" target="_blank" rel="noopener noreferrer" aria-label="Github"><img src="../assets/github.png" alt="github logo"></a>
         <a href="https://twitter.com/SiuHok" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><img src="../assets/twitter.png" alt="twitter logo"></a>
         <a href="https://www.canva.com/design/DAD5ca8VaMA/ebM48TwW5I4CTXurvfjnSg/view?utm_content=DAD5ca8VaMA&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton" target="_blank" rel="noopener noreferrer" aria-label="Resume"><img src="../assets/cv.png" alt="resume icon"></a>
       </div>
@@ -72,6 +72,12 @@ img {
 
 .media-link a img{
   max-width: 40px;
+  background: #FFF;
+  padding: 0.15rem;
+}
+
+.media-link a:focus-visible {
+  transform: scale(1.2);
 }
 
 </style>
