@@ -134,6 +134,11 @@ export default {
   cursor: pointer;
 }
 
+.poke-time button:focus-visible {
+  transform: scale(1.2);
+  background: rgba(255, 255, 255, 0.2);
+}
+
 /* apply :hover only on pointer */
 @media (hover: hover) and (pointer: fine) {
   .poke-time button:hover{
