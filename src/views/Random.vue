@@ -13,7 +13,7 @@
     </article>
     <div class="group">
       <input
-        type="number"
+        type="tel"
         @keyup="checkNumber"
         v-model="number"
         :class="[
