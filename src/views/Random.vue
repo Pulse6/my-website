@@ -26,7 +26,6 @@
             : '',
         ]"
       />
-      <span class="highlight"></span>
       <span class="bar"></span>
       <label>Number Check</label>
     </div>
@@ -253,17 +252,20 @@ export default {
   transform: scale(1.2);
   background: rgba(255, 255, 255, 0.2);
 }
-
+/* 7CEBC8 */
 .background-good {
-  background-color: green;
+  border-left: 2px solid rgb(110, 255, 110);
+  border-right: 2px solid rgb(110, 255, 110);
 }
-
-.background-bad {
-  background-color: red;
-}
-
+/* 00354C */
 .background-okay {
-  background-color: yellow;
+  border-left: 2px solid rgb(255, 255, 110);
+  border-right: 2px solid rgb(255, 255, 110);
+}
+/* 164B5C */
+.background-bad {
+  border-left: 2px solid rgb(255, 0, 0);
+  border-right: 2px solid rgb(255, 0, 0);
 }
 
 /* input */
@@ -289,7 +291,10 @@ input {
   display: block;
   width: 300px;
   border: none;
-  border-bottom: 1px solid #757575;
+  /* border-bottom: 1px solid #757575; */
+  background: #101723;
+  border-bottom: 1px solid #fff;
+  color: #fff;
 }
 
 input:focus {
@@ -328,9 +333,9 @@ input:valid ~ label {
 .bar:before,
 .bar:after {
   content: "";
-  height: 3px;
+  height: 1px;
   width: 0;
-  bottom: 1px;
+  bottom: 0px;
   position: absolute;
   background: #ff7f82;
   transition: 0.2s ease all;
@@ -350,53 +355,6 @@ input:valid ~ label {
 input:focus ~ .bar:before,
 input:focus ~ .bar:after {
   width: 50%;
-}
-
-/* HIGHLIGHTER ================================== */
-.highlight {
-  position: absolute;
-  height: 60%;
-  width: 100px;
-  top: 25%;
-  left: 0;
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-/* active state */
-input:focus ~ .highlight {
-  -webkit-animation: inputHighlighter 0.3s ease;
-  -moz-animation: inputHighlighter 0.3s ease;
-  animation: inputHighlighter 0.3s ease;
-}
-
-/* ANIMATIONS ================ */
-@-webkit-keyframes inputHighlighter {
-  from {
-    background: #5264ae;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
-}
-@-moz-keyframes inputHighlighter {
-  from {
-    background: #5264ae;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
-}
-@keyframes inputHighlighter {
-  from {
-    background: #5264ae;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
 }
 
 /* apply :hover only on pointer */
