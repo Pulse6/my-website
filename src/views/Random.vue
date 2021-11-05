@@ -294,6 +294,8 @@ input {
   /* border-bottom: 1px solid #757575; */
   background: #101723;
   border-bottom: 1px solid #fff;
+  border-left: 2px solid #101723;
+  border-right: 2px solid #101723;
   color: #fff;
 }
 
