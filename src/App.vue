@@ -5,16 +5,36 @@
       <!-- <router-link to="/about">Contact</router-link> -->
       <router-link class="btn-3" to="/random"><span>Random</span></router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
+<script>
+import {  mapActions } from "vuex"; // mapState, mapGetter,
+export default {
+  name: "App",
+  data() {
+    return {};
+  },
+  mounted() {
+    this.getNavBarHeight();
+  },
+  methods: {
+    ...mapActions(["setNavBarHeight"]),
+    getNavBarHeight() {
+      let height = this.$refs.navBar.clientHeight;
+      this.setNavBarHeight(height);
+    },
+  },
+};
+</script>
+
 <style lang="css">
- @import '~normalize.css';
+@import "~normalize.css";
 
 html {
   background: #101723;
-  color: #FFFFFF;
+  color: #ffffff;
   min-height: 100vh;
   min-width: 100vw;
   font-family: Arial, sans-serif;
@@ -23,7 +43,7 @@ html {
   text-align: center;
 }
 
-#app{
+#app {
   max-width: 1014px;
   margin: 0 auto;
   min-height: 100vh;
@@ -36,7 +56,7 @@ html {
   align-items: center;
   column-gap: 2rem;
   padding: 1rem 0;
-  margin-bottom: 2em;
+  /* margin-bottom: 2em; */
 }
 
 #nav a {
@@ -46,7 +66,7 @@ html {
   /* border-radius: 0.25rem; */
   font-weight: bold;
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
   /* transition: all 0.5s ease-in-out; */
 }
 
@@ -84,7 +104,7 @@ html {
     content: "";
     right: 0;
     top: 0;
-    background: rgba(2,126,251,1);
+    background: rgba(2, 126, 251, 1);
     transition: all 0.3s ease;
   }
 
@@ -98,7 +118,7 @@ html {
     height: 2px;
   }
 
-  .btn-3:hover{
+  .btn-3:hover {
     background: transparent;
     box-shadow: none;
   }
@@ -111,17 +131,17 @@ html {
     width: 100%;
   }
 
-  .btn-3 span:hover{
-    color: rgba(2,126,251,1);
+  .btn-3 span:hover {
+    color: rgba(2, 126, 251, 1);
   }
-  
+
   .btn-3 span:before,
   .btn-3 span:after {
     position: absolute;
     content: "";
     left: 0;
     bottom: 0;
-    background: rgba(2,126,251,1);
+    background: rgba(2, 126, 251, 1);
     transition: all 0.3s ease;
   }
 
@@ -142,6 +162,5 @@ html {
   .btn-3 span:hover:after {
     width: 100%;
   }
-
 }
 </style>

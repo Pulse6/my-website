@@ -1,5 +1,5 @@
 <template>
-  <div class="random">
+  <div class="random" :style="{minHeight: `calc( 100vh - ${navBarHeight}px)`}">
     <article class="card gradient-shadow poke-time">
       <div class="time-left">{{ timeLeft }}</div>
       <div class="poke-info" v-if="pokeData != null">
@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import axios from "axios";
 export default {
   name: "Random",
@@ -49,6 +50,9 @@ export default {
       this.timeLeft = this.GetSec();
     }, 1000),
       this.getPoke();
+  },
+  computed: {
+    ...mapState(['navBarHeight'])
   },
   methods: {
     GetSec() {

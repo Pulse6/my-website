@@ -1,18 +1,27 @@
-import Vue from 'vue'
 import Vuex from 'vuex'
+import Vue from 'vue'
 // import axios from 'axios'
+
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-  },
-  mutations: {
-  },
-  actions: {
+    navBarHeight: 0,
   },
   getters: {
+    navBarHeight: state => {
+      return state.navBarHeight
+    }
   },
-  modules: {
+  mutations: {
+    setNavBarHeight(state, height) {
+      state.navBarHeight = height
+    }
+  },
+  actions: {
+    setNavBarHeight(context, height) {
+      context.commit('setNavBarHeight', height)
+    }
   }
-})
+});
