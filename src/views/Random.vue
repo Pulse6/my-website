@@ -1,5 +1,8 @@
 <template>
-  <div class="random" :style="{minHeight: `calc( 100vh - ${navBarHeight}px)`}">
+  <div
+    class="random"
+    :style="{ minHeight: `calc( 100vh - ${navBarHeight}px)` }"
+  >
     <article class="card gradient-shadow poke-time">
       <div class="time-left">{{ timeLeft }}</div>
       <div class="poke-info" v-if="pokeData != null">
@@ -11,7 +14,7 @@
       </div>
       <button @click="getPoke">Get Random Pokemon</button>
     </article>
-    <div class="group">
+    <!-- <div class="group">
       <input
         type="tel"
         @keyup="checkNumber"
@@ -28,12 +31,12 @@
       />
       <span class="bar"></span>
       <label>Number Check</label>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 import axios from "axios";
 export default {
   name: "Random",
@@ -52,7 +55,7 @@ export default {
       this.getPoke();
   },
   computed: {
-    ...mapState(['navBarHeight'])
+    ...mapState(["navBarHeight"]),
   },
   methods: {
     GetSec() {
@@ -278,6 +281,7 @@ export default {
   position: relative;
   margin: 1.8rem 0;
 }
+
 /* Chrome, Safari, Edge, Opera */
 .group input::-webkit-outer-spin-button,
 .group input::-webkit-inner-spin-button {

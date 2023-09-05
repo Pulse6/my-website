@@ -46,6 +46,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: "Home",
   data() {
@@ -53,6 +54,9 @@ export default {
   },
   methods: {
     GetSec() {},
+  },
+  computed: {
+    ...mapState(['navBarHeight'])
   },
 };
 </script>
