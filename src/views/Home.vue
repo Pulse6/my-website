@@ -25,7 +25,7 @@
           ><img src="../assets/twitter.png" alt="twitter logo"
         /></a>
         <a
-          href="https://www.canva.com/design/DAD5ca8VaMA/ebM48TwW5I4CTXurvfjnSg/view?utm_content=DAD5ca8VaMA&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton"
+          href="https://www.canva.com/design/DAGMiOS_88I/GnqQMhlOsglS8edX0IX1cA/view?utm_content=DAGMiOS_88I&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4e7b6f4158"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Resume"
